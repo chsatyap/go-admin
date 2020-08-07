@@ -174,7 +174,7 @@ func (db *Mssql) parseSql(sql string) string {
 		//取limit后面的取值范围
 		first, limit := 0, 0
 		for i := 1; i < len(res[index]); i++ {
-			if len(strings.TrimSpace(res[index][i])) == 0 {
+			if strings.TrimSpace(res[index][i]) == "" {
 				continue
 			}
 
